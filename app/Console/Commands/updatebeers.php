@@ -74,7 +74,6 @@ class updatebeers extends Command
             if (count($apiBeers) < $resultsPerRequest) {
                 $moreBeers = false;
             } else {
-                echo ".";
                 $page++;
             }
         }
