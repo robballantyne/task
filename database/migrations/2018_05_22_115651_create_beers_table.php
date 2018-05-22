@@ -127,5 +127,6 @@ class CreateBeersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('beers');
+        Schema::dropIfExists('beer_user');
     }
 }
