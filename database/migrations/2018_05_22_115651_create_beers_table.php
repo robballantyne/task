@@ -93,7 +93,7 @@ class CreateBeersTable extends Migration
                 ->nullable()
                 ->default(null);
 
-            $table->string('brewers_tips')
+            $table->text('brewers_tips')
                 ->nullable()
                 ->default(null);
 
