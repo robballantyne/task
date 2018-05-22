@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Beer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,7 +13,8 @@ class BeerController extends Controller
 
 	public function __construct()
 	{
-		$this->beers = collect(json_decode(file_get_contents(storage_path('data.json'))));
+		$this->beers = Beer::all();
+		// TODO create paginator and formatting
 	}
 
 	public function index(Request $request)
@@ -20,11 +22,12 @@ class BeerController extends Controller
 		return view('beer.index', [
 			'beers' => $this->beers
 		]);
+		// TODO formatting
 	}
 
 	public function show($id)
 	{
-		$beer = $this->beers->get($id);
+		$beer = Beer::find($id);
 
 		dd($beer);
 	}
