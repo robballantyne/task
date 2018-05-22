@@ -111,6 +111,10 @@ class CreateBeersTable extends Migration
             $table->integer('beer_id');
             $table->integer('user_id');
         });
+
+
+        // Call the artisan command to populate the database. Could use a seeder - Maybe should, but opinion is divided. This works.
+        \Illuminate\Support\Facades\Artisan::call('beer:update');
     }
 
 
