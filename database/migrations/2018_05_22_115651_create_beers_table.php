@@ -20,36 +20,87 @@ class CreateBeersTable extends Migration
             // TODO fulltextsearch including name, tagline, description
             $table->string('name');
 
-            $table->string('tagline');
+            $table->string('tagline')
+                ->nullable()
+                ->default(null);
 
             // Stringy data from the API but we can convert this to real datetimes for sorting and filtering
-            $table->date('first_brewed');
+            $table->date('first_brewed')
+                ->nullable()
+                ->default(null);
 
             // We will use a text column as descriptions can get lengthy
-            $table->text('description');
-            $table->string('image_url');
+            $table->text('description')
+                ->nullable()
+                ->default(null);
 
-            // Index abv because this is useful info for sorting
-            $table->float('abv')->index();
+            $table->string('image_url')
+                ->nullable()
+                ->default(null);
 
-            $table->integer('ibu');
-            $table->integer('target_fg');
-            $table->integer('target_og');
-            $table->integer('ebc');
-            $table->integer('srm');
-            $table->float('ph');
-            $table->integer('attenuation_level');
+            // Index abv because this is useful info for sorting.
+            $table->float('abv')->index()
+                ->nullable()
+                ->default(null);
+
+            $table->integer('ibu')
+                ->nullable()
+                ->default(null);
+
+            $table->integer('target_fg')
+                ->nullable()
+                ->default(null);
+
+            $table->integer('target_og')
+                ->nullable()
+                ->default(null);
+
+            $table->integer('ebc')
+                ->nullable()
+                ->default(null);
+
+            $table->integer('srm')
+                ->nullable()
+                ->default(null);
+
+            $table->float('ph')
+                ->nullable()
+                ->default(null);
+
+            $table->integer('attenuation_level')
+                ->nullable()
+                ->default(null);
 
             // JSON columns. Our data is JSON. We might find this data useful but we have no plans to search or filter on it so keep it as JSON.
             // If this changes we will move some data into a standard column.
-            $table->json('volume');
-            $table->json('boil_volume');
-            $table->json('method');
-            $table->json('ingredients');
-            $table->json('food_pairing');
+            $table->json('volume')
+                ->nullable()
+                ->default(null);
 
-            $table->string('brewers_tips');
-            $table->string('contributed_by');
+            $table->json('boil_volume')
+                ->nullable()
+                ->default(null);
+
+            $table->json('method')
+                ->nullable()
+                ->default(null);
+
+            $table->json('ingredients')
+                ->nullable()
+                ->default(null);
+
+            $table->json('food_pairing')
+                ->nullable()
+                ->default(null);
+
+            $table->string('brewers_tips')
+                ->nullable()
+                ->default(null);
+
+            $table->string('contributed_by')
+                ->nullable()
+                ->default(null);
+
             $table->timestamps();
         });
 
