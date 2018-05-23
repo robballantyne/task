@@ -78,7 +78,8 @@ class BeerController extends Controller
             $this->beers = $this->beerModel->search($this->search)->paginate(12);
         } else {
             // No query passed so return everything.
-            $this->beers = $this->beerModel->paginate(12);
+            $this->beers = $this->beerModel->paginate(12)
+                ->appends($this->persistQueryString);
         }
 
         return view('beer.search', [
