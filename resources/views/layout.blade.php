@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>Brewtiful</title>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/app.css">
+        <script src="/js/app.js"></script>
     </head>
     <body>
         <div class="jumbotron">
