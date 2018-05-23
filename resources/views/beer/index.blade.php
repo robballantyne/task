@@ -8,6 +8,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <input type="text" class="form-control" placeholder="Search...">
+                            {{ csrf_field() }}
                         </div>
                         <div class="col-md-2">
                             <button class="btn btn-block btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
