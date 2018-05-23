@@ -1,0 +1,26 @@
+.beers-grid {
+  .beer-wrapper {
+    background-color: #fff;
+    margin-top: 15px;
+    // matching the ready-designed search bar
+    border-radius: 5px;
+  }
+  img {
+    max-height: 200px;
+    margin:0 auto;
+    padding:15px;
+  }
+  .info {
+    text-align: center;
+    .tagline {
+      padding: 10px;
+    }
+  }
+}
+
+.pagination-container {
+  text-align: center;
+  ul.pagination {
+  }
+  margin: 10px auto;
+}
