@@ -3,7 +3,9 @@
     <head>
         <title>Brewtiful</title>
         <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/my.css">
         <script src="/js/app.js"></script>
+        <script src="/js/my.js"></script>
     </head>
     <body>
         <div class="jumbotron">
@@ -17,6 +19,27 @@
                 </div>
             </div>
         </div>
+
+        <form action="{{ route('beer.search') }}" method="POST">
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input name="search" type="text" class="form-control" placeholder="Search...">
+                                {{ csrf_field() }}
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-block btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="{{ route('beer.random') }}" class="btn btn-block btn-default"><span class="glyphicon glyphicon-refresh"></span> Random</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
         @yield('content')
     </body>
