@@ -7,7 +7,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-8">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input name="search" type="text" class="form-control" placeholder="Search...">
                             {{ csrf_field() }}
                         </div>
                         <div class="col-md-2">
