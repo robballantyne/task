@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Brewtiful</title>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
         <link rel="stylesheet" href="/css/my.css">
         <script src="/js/app.js"></script>
