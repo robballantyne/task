@@ -42,4 +42,9 @@ class Beer extends Model
 
         return $beer;
     }
+
+    public function scopeSearch($query ,$search)
+    {
+        return $query->where('name', 'LIKE', "%$search%");
+    }
 }
