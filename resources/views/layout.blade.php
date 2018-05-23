@@ -20,14 +20,13 @@
             </div>
         </div>
 
-        <form action="{{ route('beer.search') }}" method="POST">
+        <form action="{{ route('beer.search') }}" method="GET">
             <div class="container">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-8">
-                                <input name="search" type="text" class="form-control" placeholder="Search...">
-                                {{ csrf_field() }}
+                                <input name="query" type="text" class="form-control" placeholder="Search...">
                             </div>
                             <div class="col-md-2">
                                 <button class="btn btn-block btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
