@@ -98,6 +98,12 @@ $tagline-style: oblique;
   }
 }
 
+.view-switch {
+  text-align: right;
+  .btn.view-switch {
+    margin-left: 5px;
+  }
+}
 .pagination-container {
   text-align: center;
   ul.pagination {
