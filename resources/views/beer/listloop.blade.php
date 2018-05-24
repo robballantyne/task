@@ -12,7 +12,7 @@
             <div class="col-sm-8 col-md-9">
                 <div class="info">
                     <h2>{{ $beer->name }}</h2>
-                    <blockquote>{{ $beer->tagline }}</blockquote>
+                    <blockquote class="tagline">{{ $beer->tagline }}</blockquote>
                 </div>
             </div>
 
