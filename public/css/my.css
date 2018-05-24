@@ -114,6 +114,16 @@
 }
 
 /* line 101, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.view-switch {
+  text-align: right;
+}
+
+/* line 103, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.view-switch .btn.view-switch {
+  margin-left: 5px;
+}
+
+/* line 107, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .pagination-container {
   text-align: center;
   margin: 10px auto;

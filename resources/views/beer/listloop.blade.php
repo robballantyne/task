@@ -1,4 +1,10 @@
 <div class="container beers-list">
+    <div class="view-switch panel">
+        <div class="panel-body">
+            <button id="list-view-switch" disabled=disabled class="btn view-switch" data-view="list"><i class="glyphicon glyphicon-list"></i></button>
+            <button id="grid-view-switch" class="btn view-switch" data-view="grid"><i class="glyphicon glyphicon-th-large"></i></button>
+        </div>
+    </div>
     <div class="flex-row row">
         @foreach($beers as $beer)
             <div class="col-sm-4 col-md-3">

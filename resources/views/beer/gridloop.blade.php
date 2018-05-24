@@ -1,4 +1,10 @@
 <div class="container beers-grid">
+        <div class="view-switch panel">
+            <div class="panel-body">
+                <button id="list-view-switch" class="btn view-switch" data-view="list"><i class="glyphicon glyphicon-list"></i></button>
+                <button id="grid-view-switch" disabled=disabled class="btn view-switch" data-view="grid"><i class="glyphicon glyphicon-th-large"></i></button>
+            </div>
+        </div>
     <div class="flex-row row">
         @foreach($beers as $beer)
         <div class="col-sm-6 col-lg-4">
@@ -10,7 +16,6 @@
                     <p class="title"><a href="{{ route('beer.show', $beer->id) }}">{{ $beer->name }}</a></p>
                     <p class="tagline">{{ $beer->tagline }}</p>
                 </div>
-
             </div>
         </div>
         @endforeach

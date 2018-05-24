@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Input;
 
 class BeerController extends Controller
 {
+    protected $request;
+
     // Injecting the beer model. We will use scopes and possibly adopt the repository pattern.
     protected $beerModel;
 
@@ -114,14 +116,14 @@ class BeerController extends Controller
     }
 
     /**
-     * Determine whether our url contains query param 'view' value 'list'.
+     * Determine whether our session key 'viewtype' is list
      *
      * @return bool
      */
     private function isListView()
     {
-        // TODO we will store preferred view in session rather than relying on querystring
-        if (strtolower($this->request->get('view')) == 'list') {
+        $viewType = $this->request->session()->get('viewtype');
+        if ($viewType && $viewType == 'list') {
             return true;
         }
         return false;

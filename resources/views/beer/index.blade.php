@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    @if ($list)
+
+    @if ($list === true)
         @include('beer.listloop')
 
     @else

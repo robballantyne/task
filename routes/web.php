@@ -18,6 +18,7 @@ Route::group([ 'middleware' => [ 'web' ] ], function()
 	// Changed search this to get for simpler pagination
 	Route::get('beer/search', [ 'uses' => 'BeerController@search', 'as' => 'beer.search' ]);
 	Route::resource('beer', 'BeerController', [ 'only' => [ 'index', 'show' ] ]);
+    Route::post('ajax/viewswitch', array('as' => 'viewSwitch', 'uses' => 'AjaxController@viewSwitch'));
 });
 
 Auth::routes();
