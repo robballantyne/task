@@ -1,10 +1,39 @@
+// Some variables
+$bg-color: #fff;
+$tagline-style: oblique;
+
+// Useful fix to keep columns at equal height
+// https://codepen.io/bootstrapped/full/RrabNe
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row.row:after,
+.flex-row.row:before {
+  display: flex;
+}
+
+.beers-grid, .beers-list, .show-beer {
+  .tagline {
+    font-style: $tagline-style;
+  }
+}
 .beers-grid {
+  [class*='col-'] {
+    margin-bottom: 7px;
+  }
+
   .beer-wrapper {
-    background-color: #fff;
+    background-color: $bg-color;
     margin-top: 15px;
     // matching the ready-designed search bar
     border-radius: 5px;
   }
+  // Wants media queries
   img {
     max-height: 200px;
     margin:0 auto;
@@ -15,6 +44,57 @@
     .tagline {
       padding: 10px;
     }
+  }
+}
+
+.beers-list {
+  [class*='col-'] {
+    margin-bottom: 24px;
+  }
+
+  .info {
+    background-color: $bg-color;
+    height: 100%; // of the flex row
+    padding-left: 15px;
+    padding-right: 15px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    blockquote {
+      font-size: 1.4rem;
+    }
+  }
+
+  .img-wrap {
+    background-color: $bg-color;
+    // Wants media queries
+    img {
+      max-height: 200px;
+      margin: 0 auto;
+      padding:15px;
+    }
+  }
+}
+
+.show-beer {
+  h1 {
+    text-align: center;
+  }
+  .tagline {
+    text-align: center;
+  }
+  // Wants media queries
+  img {
+    max-height: 300px;
+    margin: 10px auto;
+  }
+  .description {
+    margin-top: 15px;
+    padding:15px;
+  }
+  table {
+    width: 90%;
+    margin:0 auto;
   }
 }
 
