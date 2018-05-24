@@ -1,0 +1,122 @@
+/* line 7, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 11, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.flex-row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 15, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.flex-row.row:after,
+.flex-row.row:before {
+  display: flex;
+}
+
+/* line 21, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .tagline, .beers-list .tagline, .show-beer .tagline {
+  font-style: oblique;
+}
+
+/* line 26, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid [class*='col-'] {
+  margin-bottom: 7px;
+}
+
+/* line 30, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .beer-wrapper {
+  background-color: #fff;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+/* line 37, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid img {
+  max-height: 200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* line 42, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .info {
+  text-align: center;
+}
+
+/* line 44, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .info .tagline {
+  padding: 10px;
+}
+
+/* line 51, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list [class*='col-'] {
+  margin-bottom: 24px;
+}
+
+/* line 55, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .info {
+  background-color: #fff;
+  height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 60, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .info h2 {
+  font-size: 1.8rem;
+}
+
+/* line 63, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .info blockquote {
+  font-size: 1.4rem;
+}
+
+/* line 68, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .img-wrap {
+  background-color: #fff;
+}
+
+/* line 71, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .img-wrap img {
+  max-height: 200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* line 80, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer h1 {
+  text-align: center;
+}
+
+/* line 83, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer .tagline {
+  text-align: center;
+}
+
+/* line 87, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer img {
+  max-height: 300px;
+  margin: 10px auto;
+}
+
+/* line 91, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer .description {
+  margin-top: 15px;
+  padding: 15px;
+}
+
+/* line 95, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer table {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* line 101, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.pagination-container {
+  text-align: center;
+  margin: 10px auto;
+}
+
+/*# sourceMappingURL=../../../public/css/my.map */
