@@ -19,3 +19,7 @@ Route::group([ 'middleware' => [ 'web' ] ], function()
 	Route::get('beer/search', [ 'uses' => 'BeerController@search', 'as' => 'beer.search' ]);
 	Route::resource('beer', 'BeerController', [ 'only' => [ 'index', 'show' ] ]);
 });
+
+Auth::routes();
+
+Route::get('/account', 'AccountController@index')->name('account');
