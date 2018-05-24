@@ -61,21 +61,25 @@ class BeerController extends Controller
      */
 	public function show($id)
 	{
-		$beer = $this->beerModel->find($id);
+		$this->beer = $this->beerModel->find($id);
 
-		dd($beer);
+        return view('beer.show', [
+            'beer'  => $this->beer
+        ]);
 	}
+
 
     /**
      * Search for beers by name
      */
 	public function search()
     {
-        $this->search = $this->request->post("query");
+        $this->search = Input::get("query");
 
         // If there is a search query passed, search.
         if ($this->search) {
-            $this->beers = $this->beerModel->search($this->search)->paginate(12);
+            $this->beers = $this->beerModel->search($this->search)->paginate(12)
+                ->appends($this->persistQueryString);
         } else {
             // No query passed so return everything.
             $this->beers = $this->beerModel->paginate(12)
@@ -96,7 +100,9 @@ class BeerController extends Controller
     {
         $this->beer = $this->beerModel->inRandomOrder()->first();
 
-        dd($this->beer);
+        return view('beer.show', [
+            'beer'  => $this->beer
+        ]);
     }
 
     /**
