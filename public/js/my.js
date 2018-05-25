@@ -19,7 +19,8 @@ var brewtifulScripts = (function ($) {
             });
     };
 
-    var toggleFavouriteUserBeer = function($target)
+    // Toggle the relationship between beer and user
+    var toggleFavouriteUserBeer = function($target, remove)
     {
         $.post('/ajax/togglefavourite',
             {
@@ -54,6 +55,7 @@ $(document).on("click", ".btn.view-switch", function() {
     brewtifulScripts.switchView($(this).attr('data-view'));
 });
 
+// invoke script to toggle favourites
 $(document).on("click", ".btn.fav-toggle", function(e) {
     brewtifulScripts.toggleFavouriteUserBeer($(this));
     e.preventDefault();

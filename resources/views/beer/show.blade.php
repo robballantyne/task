@@ -56,6 +56,16 @@
                                         </ul>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>Food pairings</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            @foreach($beer->getFoodPairings() as $food)
+                                                <li class="list-unstyled">{{ $food }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>

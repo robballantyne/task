@@ -124,6 +124,11 @@ class Beer extends Model
             ->yeast;
     }
 
+    public function getFoodPairings()
+    {
+        return json_decode($this->food_pairing);
+    }
+
     /**
      *
      * Reduce the ingredients down to unique values.
