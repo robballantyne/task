@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -17,6 +18,21 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
+    /**
+     * Define the beers relationship
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function beers()
+    {
+        return $this->belongsToMany('App\Beer', 'beer_user', 'user_id', 'beer_id');
+    }
+
+    public function getAuthUser()
+    {
+        return Auth::user();
+    }
 
     /**
      * The attributes that should be hidden for arrays.

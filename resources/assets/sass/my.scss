@@ -1,5 +1,7 @@
 // Some variables
 $bg-color: #fff;
+$bg-hover: #fbfbfb;
+$heart-color: #f4b942;
 $tagline-style: oblique;
 
 // Useful fix to keep columns at equal height
@@ -17,6 +19,24 @@ $tagline-style: oblique;
   display: flex;
 }
 
+.jumbotron.header {
+  .container {
+    position: relative;
+  }
+  .account-links {
+    position: absolute;
+    bottom: -30px;
+    @media screen and (min-width: 768px) {
+      bottom: -46px;
+    }
+    text-align: right;
+    padding-right: 30px;
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}
+
 .beers-grid, .beers-list, .show-beer {
   .tagline {
     font-style: $tagline-style;
@@ -28,10 +48,16 @@ $tagline-style: oblique;
   }
 
   .beer-wrapper {
+    transition: all 1s ease-in-out;
+    //position: relative;
     background-color: $bg-color;
     margin-top: 15px;
     // matching the ready-designed search bar
     border-radius: 5px;
+    &:hover, &:focus {
+      background-color: $bg-hover;
+    }
+
   }
   // Wants media queries
   img {
@@ -66,8 +92,11 @@ $tagline-style: oblique;
   }
 
   .img-wrap {
+    transition: all 0.5s;
     background-color: $bg-color;
-    // Wants media queries
+    &:hover, &:focus {
+      background-color: $bg-hover;
+    }
     img {
       max-height: 200px;
       margin: 0 auto;
@@ -96,6 +125,9 @@ $tagline-style: oblique;
     width: 90%;
     margin:0 auto;
   }
+  .panel {
+    position: relative;
+  }
 }
 
 .view-switch {
@@ -104,6 +136,51 @@ $tagline-style: oblique;
     margin-left: 5px;
   }
 }
+
+.beers-grid .fav-toggle {
+  top :25px;
+  left: 25px;
+  i {
+    font-size: 2rem;
+  }
+}
+
+.beers-list .fav-toggle {
+  top: 0;
+  right:25px;
+  i {
+    font-size: 3rem;
+  }
+}
+
+.show-beer .fav-toggle {
+  top: 15px;
+  left: 25px;
+  i {
+    font-size: 3rem;
+  }
+}
+
+.fav-toggle {
+  position: absolute;
+  background-color: transparent;
+  i{
+    transition: color 0.5s;
+    color: #efefef;
+    &:hover, &:focus {
+      color: lighten($heart-color, 30%);
+    }
+  }
+  &.favourite {
+    i {
+      color: $heart-color;
+      &:hover, &:focus {
+        color: lighten($heart-color, 30%);
+      }
+    }
+  }
+}
+
 .pagination-container {
   text-align: center;
   ul.pagination {

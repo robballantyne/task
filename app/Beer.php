@@ -4,12 +4,24 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Beer extends Model
 {
     protected $guarded = [];
 
+    protected $userModel;
 
+
+    /**
+     * Define the users relationship
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'beer_user', 'beer_id', 'user_id');
+    }
     /**
      * Add a beer to the database if there is not already a beer with the same name, otherwise update.
      *
@@ -60,6 +72,25 @@ class Beer extends Model
     {
         return $query->where('name', 'LIKE', "%$search%");
     }
+
+    /**
+     * Eloquent query scope to retrieve our beer list with the user if attached (for detecting favourites in normal lists)
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeWithUser($query)
+    {
+        if (Auth::id()) {
+            return $query->with(['users' => function ($q) {
+                $q->where('user_id', Auth::id());
+            }]);
+        }
+        else {
+            return $query;
+        }
+    }
+
 
     /**
      * Get the hops used in the beer

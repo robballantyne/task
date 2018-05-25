@@ -19,8 +19,32 @@ var brewtifulScripts = (function ($) {
             });
     };
 
+    var toggleFavouriteUserBeer = function($target)
+    {
+        $.post('/ajax/togglefavourite',
+            {
+                '_token': $('meta[name=csrf-token]').attr('content'),
+                beer_id: $target.attr('data-beer-id'),
+            })
+            .done(function(data) {
+                if (data.favourite === "1") {
+                    $target.addClass('favourite');
+                } else {
+                    $target.removeClass('favourite');
+                }
+            })
+            .fail(function() {
+                //
+            })
+            .always(function() {
+                //
+            });
+    };
+
+
     return {
         switchView: switchView,
+        toggleFavouriteUserBeer: toggleFavouriteUserBeer,
     }
 
 })(jQuery);
@@ -28,4 +52,9 @@ var brewtifulScripts = (function ($) {
 // invoke script to switch the view
 $(document).on("click", ".btn.view-switch", function() {
     brewtifulScripts.switchView($(this).attr('data-view'));
+});
+
+$(document).on("click", ".btn.fav-toggle", function(e) {
+    brewtifulScripts.toggleFavouriteUserBeer($(this));
+    e.preventDefault();
 });

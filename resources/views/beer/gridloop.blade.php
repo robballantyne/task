@@ -7,10 +7,17 @@
         </div>
     <div class="flex-row row">
         @foreach($beers as $beer)
-        <div class="col-sm-6 col-lg-4">
+        <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="beer-wrapper">
                 <a href="{{ route('beer.show', $beer->id) }}">
                     <img class="img-responsive" src="{{ $beer->image_url }}">
+                    @auth
+                    @if (count($beer->users) > 0)
+                        <button class="btn fav-toggle favourite" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @else
+                        <button class="btn fav-toggle" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @endif
+                    @endauth
                 </a>
                 <div class="info">
                     <p class="title"><a href="{{ route('beer.show', $beer->id) }}">{{ $beer->name }}</a></p>

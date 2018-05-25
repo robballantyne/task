@@ -32,7 +32,7 @@ class BeerController extends Controller
 	    $this->request = $request;
 	    $this->beerModel = $beerModel;
 	    // Paginator will drop the query string unless we specifically opt to keep params
-	    $this->persistQueryString = Input::only(['view', 'query']);
+	    $this->persistQueryString = Input::only(['query']);
 	}
 
     /**
@@ -43,17 +43,12 @@ class BeerController extends Controller
 	public function index()
 	{
         // Paginate 12 by default. Nicely divides into even numbers per row
-	    $this->beers = $this->beerModel->paginate(12)
-            ->appends($this->persistQueryString);
+	    $this->beers = $this->beerModel->withUser()->paginate(12);
 
-	    // grid view
 		return view('beer.index', [
 			'beers' => $this->beers,
             'list'  => $this->isListView()
 		]);
-
-		// list view
-		// TODO formatting
 	}
 
     /**
@@ -63,7 +58,7 @@ class BeerController extends Controller
      */
 	public function show($id)
 	{
-		$this->beer = $this->beerModel->find($id);
+		$this->beer = $this->beerModel->withUser()->find($id);
 
         return view('beer.show', [
             'beer'  => $this->beer
@@ -80,11 +75,11 @@ class BeerController extends Controller
 
         // If there is a search query passed, search.
         if ($this->search) {
-            $this->beers = $this->beerModel->search($this->search)->paginate(12)
+            $this->beers = $this->beerModel->withUser()->search($this->search)->paginate(12)
                 ->appends($this->persistQueryString);
         } else {
             // No query passed so return everything.
-            $this->beers = $this->beerModel->paginate(12)
+            $this->beers = $this->beerModel->withUser()->paginate(12)
                 ->appends($this->persistQueryString);
         }
 
@@ -100,7 +95,7 @@ class BeerController extends Controller
      */
     public function random()
     {
-        $this->beer = $this->beerModel->inRandomOrder()->first();
+        $this->beer = $this->beerModel->withUser()->inRandomOrder()->first();
 
         return view('beer.show', [
             'beer'  => $this->beer

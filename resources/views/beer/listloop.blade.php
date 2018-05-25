@@ -7,7 +7,7 @@
     </div>
     <div class="flex-row row">
         @foreach($beers as $beer)
-            <div class="col-sm-4 col-md-3">
+            <div class="col-xs-4 col-sm-4 col-md-3">
                 <a href="{{ route('beer.show', $beer->id) }}">
                     <div class="img-wrap">
                         <img class="img-responsive" src="{{ $beer->image_url }}">
@@ -15,11 +15,18 @@
                 </a>
             </div>
 
-            <div class="col-sm-8 col-md-9">
+            <div class="col-xs-8 col-sm-8 col-md-9">
                 <div class="info">
                     <h2>{{ $beer->name }}</h2>
                     <blockquote class="tagline">{{ $beer->tagline }}</blockquote>
                 </div>
+                @auth
+                    @if (count($beer->users) > 0)
+                        <button class="btn fav-toggle favourite" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @else
+                        <button class="btn fav-toggle" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @endif
+                @endauth
             </div>
 
         @endforeach

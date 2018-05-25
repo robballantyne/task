@@ -4,6 +4,13 @@
     <div class="container show-beer">
         <div class="panel">
             <div class="panel-body">
+                @auth
+                    @if (count($beer->users) > 0)
+                        <button class="btn fav-toggle favourite" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @else
+                        <button class="btn fav-toggle" data-beer-id="{{ $beer->id }}"><i class="glyphicon glyphicon-heart"></i></button>
+                    @endif
+                @endauth
                 <h1>{{ $beer->name }}</h1>
                 <p class="tagline">{{ $beer->tagline }}</p>
                 <div class="flex-row row">

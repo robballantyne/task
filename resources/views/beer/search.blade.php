@@ -3,7 +3,7 @@
 @section('content')
     <div class="container search-info">
         <div class="row">
-            <div class="col-xs-12">{{ $beers->total() }} search results for '{{ $query }}'</div>
+            <div class="col-xs-12"><p>{{ $beers->total() }} search results for '{{ $query }}'</p></div>
         </div>
     </div>
     @if ($list)

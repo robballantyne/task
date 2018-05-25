@@ -1,61 +1,92 @@
-/* line 7, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 9, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .flex-row {
   display: flex;
   flex-wrap: wrap;
 }
 
-/* line 11, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 13, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .flex-row > [class*='col-'] {
   display: flex;
   flex-direction: column;
 }
 
-/* line 15, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 17, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .flex-row.row:after,
 .flex-row.row:before {
   display: flex;
 }
 
-/* line 21, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 23, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.jumbotron.header .container {
+  position: relative;
+}
+
+/* line 26, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.jumbotron.header .account-links {
+  position: absolute;
+  bottom: -30px;
+  text-align: right;
+  padding-right: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 26, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+  .jumbotron.header .account-links {
+    bottom: -46px;
+  }
+}
+
+/* line 35, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.jumbotron.header ul {
+  margin-bottom: 0;
+}
+
+/* line 41, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid .tagline, .beers-list .tagline, .show-beer .tagline {
   font-style: oblique;
 }
 
-/* line 26, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 46, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid [class*='col-'] {
   margin-bottom: 7px;
 }
 
-/* line 30, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 50, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid .beer-wrapper {
+  transition: all 1s ease-in-out;
   background-color: #fff;
   margin-top: 15px;
   border-radius: 5px;
 }
 
-/* line 37, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 57, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .beer-wrapper:hover, .beers-grid .beer-wrapper:focus {
+  background-color: #fbfbfb;
+}
+
+/* line 63, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid img {
   max-height: 200px;
   margin: 0 auto;
   padding: 15px;
 }
 
-/* line 42, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 68, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid .info {
   text-align: center;
 }
 
-/* line 44, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 70, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-grid .info .tagline {
   padding: 10px;
 }
 
-/* line 51, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 77, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list [class*='col-'] {
   margin-bottom: 24px;
 }
 
-/* line 55, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 81, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list .info {
   background-color: #fff;
   height: 100%;
@@ -63,67 +94,138 @@
   padding-right: 15px;
 }
 
-/* line 60, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 86, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list .info h2 {
   font-size: 1.8rem;
 }
 
-/* line 63, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 89, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list .info blockquote {
   font-size: 1.4rem;
 }
 
-/* line 68, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 94, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list .img-wrap {
+  transition: all 0.5s;
   background-color: #fff;
 }
 
-/* line 71, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 97, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .img-wrap:hover, .beers-list .img-wrap:focus {
+  background-color: #fbfbfb;
+}
+
+/* line 100, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .beers-list .img-wrap img {
   max-height: 200px;
   margin: 0 auto;
   padding: 15px;
 }
 
-/* line 80, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 109, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .show-beer h1 {
   text-align: center;
 }
 
-/* line 83, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 112, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .show-beer .tagline {
   text-align: center;
 }
 
-/* line 87, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 116, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .show-beer img {
   max-height: 300px;
   margin: 10px auto;
 }
 
-/* line 91, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 120, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .show-beer .description {
   margin-top: 15px;
   padding: 15px;
 }
 
-/* line 95, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 124, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .show-beer table {
   width: 90%;
   margin: 0 auto;
 }
 
-/* line 101, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 128, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer .panel {
+  position: relative;
+}
+
+/* line 133, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .view-switch {
   text-align: right;
 }
 
-/* line 103, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 135, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .view-switch .btn.view-switch {
   margin-left: 5px;
 }
 
-/* line 107, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+/* line 140, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .fav-toggle {
+  top: 25px;
+  left: 25px;
+}
+
+/* line 143, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-grid .fav-toggle i {
+  font-size: 2rem;
+}
+
+/* line 148, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .fav-toggle {
+  top: 0;
+  right: 25px;
+}
+
+/* line 151, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.beers-list .fav-toggle i {
+  font-size: 3rem;
+}
+
+/* line 156, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer .fav-toggle {
+  top: 15px;
+  left: 25px;
+}
+
+/* line 159, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.show-beer .fav-toggle i {
+  font-size: 3rem;
+}
+
+/* line 164, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.fav-toggle {
+  position: absolute;
+  background-color: transparent;
+}
+
+/* line 167, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.fav-toggle i {
+  transition: color 0.5s;
+  color: #efefef;
+}
+
+/* line 170, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.fav-toggle i:hover, .fav-toggle i:focus {
+  color: #fcefd3;
+}
+
+/* line 175, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.fav-toggle.favourite i {
+  color: #f4b942;
+}
+
+/* line 177, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
+.fav-toggle.favourite i:hover, .fav-toggle.favourite i:focus {
+  color: #fcefd3;
+}
+
+/* line 184, C:/Users/Rob/VagrantCode/bluestormtest.local/resources/assets/sass/my.scss */
 .pagination-container {
   text-align: center;
   margin: 10px auto;

@@ -8,16 +8,32 @@
         <link rel="stylesheet" href="/css/my.css">
         <script src="/js/app.js"></script>
         <script src="/js/my.js"></script>
+        <link rel="icon" type="image/png" href="/favicon-64.png" sizes="64x64">
+        <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
     </head>
     <body>
-        <div class="jumbotron">
+        <div class="jumbotron header">
             <div class="container">
-                <div class="col-md-2">
-                    <a href="/"><img src="/logo.png" class="img-responsive" alt=""></a>
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="/"><img src="/logo.png" class="img-responsive" alt=""></a>
+                    </div>
+                    <div class="col-md-10">
+                        <h1>Brewtiful</h1>
+                        <p style="margin-bottom: 0;">The DIY BrewDog beer browsing web app.</p>
+                    </div>
                 </div>
-                <div class="col-md-10">
-                    <h1>Brewtiful</h1>
-                    <p style="margin-bottom: 0;">The DIY BrewDog beer browsing web app.</p>
+                <div class="row">
+                    <div class="col-xs-12 account-links">
+                        <ul class="list-inline">
+                            @guest
+                            <li><a href="/login">Sign in</a> / <a href="/register">Register</a></li>
+                            @endguest
+                            @auth
+                                    <li><a href="{{ route('auth.userfavourite') }}">My Favourites</a> / <a href="/logout">Sign out</a></li>
+                            @endauth
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
