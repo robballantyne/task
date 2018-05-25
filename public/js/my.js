@@ -20,7 +20,7 @@ var brewtifulScripts = (function ($) {
     };
 
     // Toggle the relationship between beer and user
-    var toggleFavouriteUserBeer = function($target, remove)
+    var toggleFavouriteUserBeer = function($target)
     {
         $.post('/ajax/togglefavourite',
             {
